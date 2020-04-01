@@ -1,0 +1,47 @@
+trainX.shape (4785, 3, 1) trainY.shape (4785,)
+testX.shape (2355, 3, 1) testY.shape (2355,)
+Train on 4785 samples, validate on 2355 samples
+Epoch 1/20
+ - 29s - loss: 0.0105 - val_loss: 0.0052
+Epoch 2/20
+ - 26s - loss: 0.0059 - val_loss: 0.0040
+Epoch 3/20
+ - 18s - loss: 0.0045 - val_loss: 0.0030
+Epoch 4/20
+ - 25s - loss: 0.0038 - val_loss: 0.0029
+Epoch 5/20
+ - 24s - loss: 0.0038 - val_loss: 0.0030
+Epoch 6/20
+ - 24s - loss: 0.0040 - val_loss: 0.0030
+Epoch 7/20
+ - 24s - loss: 0.0039 - val_loss: 0.0028
+Epoch 8/20
+ - 21s - loss: 0.0033 - val_loss: 0.0021
+Epoch 9/20
+ - 24s - loss: 0.0024 - val_loss: 0.0015
+Epoch 10/20
+ - 24s - loss: 0.0020 - val_loss: 0.0016
+Epoch 11/20
+ - 24s - loss: 0.0019 - val_loss: 0.0019
+Epoch 12/20
+ - 24s - loss: 0.0018 - val_loss: 0.0019
+Epoch 13/20
+ - 25s - loss: 0.0017 - val_loss: 0.0018
+Epoch 14/20
+ - 24s - loss: 0.0016 - val_loss: 0.0017
+Epoch 15/20
+ - 24s - loss: 0.0015 - val_loss: 0.0016
+Epoch 16/20
+ - 23s - loss: 0.0015 - val_loss: 0.0014
+Epoch 17/20
+ - 15s - loss: 0.0014 - val_loss: 0.0013
+Epoch 18/20
+ - 13s - loss: 0.0013 - val_loss: 0.0013
+Epoch 19/20
+ - 13s - loss: 0.0012 - val_loss: 0.0012
+Epoch 20/20
+ - 8s - loss: 0.0011 - val_loss: 0.0010
+trainPredict.shape (4785, 1)
+testPredict.shape (2355, 1)
+Train Score: 0.04 RMSE
+Test Score: 0.03 RMSE

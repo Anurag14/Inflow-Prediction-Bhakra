@@ -1,0 +1,75 @@
+#LSTM for inflow prediction problem with regression framing
+import numpy
+from pandas import read_csv
+import math
+from keras.models import Sequential
+from keras.models import load_model
+from keras.layers import Dense
+from keras.layers import LSTM
+from keras.callbacks import TensorBoard
+from sklearn.preprocessing import MinMaxScaler
+from sklearn.metrics import mean_squared_error
+# convert an array of values into a dataset matrix
+def create_dataset(dataset, look_back=3):
+	dataX, dataY = [], []
+	for i in range(len(dataset)-look_back-1):
+		a = dataset[i:(i+look_back), 0]
+		dataX.append(a)
+		dataY.append(dataset[i + look_back, 0])
+	return numpy.array(dataX), numpy.array(dataY)
+# fix random seed for reproducibility
+numpy.random.seed(7)
+# load the dataset
+dataframe = read_csv('../data1.csv', usecols=[2], engine='python', skipfooter=3)
+dataset = dataframe.values
+dataset = dataset.astype('float32')
+# normalize the dataset
+scaler = MinMaxScaler(feature_range=(0, 1))
+dataset = scaler.fit_transform(dataset)
+# split into train and test sets
+train_size = int(len(dataset) * 0.67)
+test_size = len(dataset) - train_size
+train, test = dataset[0:train_size,:], dataset[train_size:len(dataset),:]
+# reshape into X=t and Y=t+1
+look_back = 3
+trainX, trainY = create_dataset(train, look_back)
+testX, testY = create_dataset(test, look_back)
+# reshape input to be [samples, time steps, features]
+trainX = numpy.reshape(trainX, (trainX.shape[0], 1, trainX.shape[1]))
+testX = numpy.reshape(testX, (testX.shape[0], 1, testX.shape[1]))
+#create a tensorboard object for logging purpose 
+tensorboard = TensorBoard(log_dir='./logs', histogram_freq=0,
+                          write_graph=True, write_images=False)
+# create and fit the LSTM network
+model = Sequential()
+model.add(LSTM(4, input_shape=(1, look_back)))
+model.add(Dense(1))
+model.compile(loss='mean_squared_error', optimizer='adam')
+model.fit(trainX, trainY, epochs=10, batch_size=1,validation_data=(testX, testY), verbose=2,callbacks=[tensorboard])
+model.reset_states()
+# make predictions
+model.save('mymodel.h5')
+trainPredict = model.predict(trainX, batch_size=batch_size)
+model.reset_states()
+testPredict = model.predict(testX, batch_size=batch_size)
+# invert predictions
+trainPredict = scaler.inverse_transform(trainPredict)
+trainY = scaler.inverse_transform([trainY])
+testPredict = scaler.inverse_transform(testPredict)
+testY = scaler.inverse_transform([testY])
+# calculate root mean squared error
+trainScore = math.sqrt(mean_squared_error(trainY[0], trainPredict[:,0]))
+print('Train Score: %.2f RMSE' % (trainScore))
+testScore = math.sqrt(mean_squared_error(testY[0], testPredict[:,0]))
+print('Test Score: %.2f RMSE' % (testScore))
+# shift train predictions for plotting
+trainPredictPlot = numpy.empty_like(dataset)
+trainPredictPlot[:, :] = numpy.nan
+trainPredictPlot[look_back:len(trainPredict)+look_back, :] = trainPredict
+# shift test predictions for plotting
+testPredictPlot = numpy.empty_like(dataset)
+testPredictPlot[:, :] = numpy.nan
+testPredictPlot[len(trainPredict)+(look_back*2)+1:len(dataset)-1, :] = testPredict
+# save arrays / results to outline.npz for plotting
+numpy.savez('outfile.npz', testPredictPlot=testPredictPlot , trainPredictPlot=trainPredictPlot, dataset=scaler.inverse_transform(dataset))
+

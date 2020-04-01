@@ -1,0 +1,9 @@
+trainX.shape (4785, 3, 1) trainY.shape (4785,)
+testX.shape (2355, 3, 1) testY.shape (2355,)
+Train on 4785 samples, validate on 2355 samples
+Epoch 1/1
+ - 30s - loss: 0.0105 - val_loss: 0.0052
+trainPredict.shape (4785, 1)
+testPredict.shape (2355, 1)
+Train Score: 0.08 RMSE
+Test Score: 0.07 RMSE

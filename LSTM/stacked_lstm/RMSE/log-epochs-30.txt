@@ -1,0 +1,67 @@
+trainX.shape (4785, 3, 1) trainY.shape (4785,)
+testX.shape (2355, 3, 1) testY.shape (2355,)
+Train on 4785 samples, validate on 2355 samples
+Epoch 1/30
+ - 29s - loss: 0.0105 - val_loss: 0.0052
+Epoch 2/30
+ - 24s - loss: 0.0059 - val_loss: 0.0040
+Epoch 3/30
+ - 24s - loss: 0.0045 - val_loss: 0.0030
+Epoch 4/30
+ - 24s - loss: 0.0038 - val_loss: 0.0029
+Epoch 5/30
+ - 24s - loss: 0.0038 - val_loss: 0.0030
+Epoch 6/30
+ - 24s - loss: 0.0040 - val_loss: 0.0030
+Epoch 7/30
+ - 24s - loss: 0.0039 - val_loss: 0.0028
+Epoch 8/30
+ - 24s - loss: 0.0033 - val_loss: 0.0021
+Epoch 9/30
+ - 24s - loss: 0.0024 - val_loss: 0.0015
+Epoch 10/30
+ - 24s - loss: 0.0020 - val_loss: 0.0016
+Epoch 11/30
+ - 24s - loss: 0.0019 - val_loss: 0.0019
+Epoch 12/30
+ - 24s - loss: 0.0018 - val_loss: 0.0019
+Epoch 13/30
+ - 24s - loss: 0.0017 - val_loss: 0.0018
+Epoch 14/30
+ - 24s - loss: 0.0016 - val_loss: 0.0017
+Epoch 15/30
+ - 24s - loss: 0.0015 - val_loss: 0.0016
+Epoch 16/30
+ - 24s - loss: 0.0015 - val_loss: 0.0014
+Epoch 17/30
+ - 24s - loss: 0.0014 - val_loss: 0.0013
+Epoch 18/30
+ - 24s - loss: 0.0013 - val_loss: 0.0013
+Epoch 19/30
+ - 24s - loss: 0.0012 - val_loss: 0.0012
+Epoch 20/30
+ - 24s - loss: 0.0011 - val_loss: 0.0010
+Epoch 21/30
+ - 24s - loss: 0.0011 - val_loss: 9.1828e-04
+Epoch 22/30
+ - 24s - loss: 0.0010 - val_loss: 8.3193e-04
+Epoch 23/30
+ - 24s - loss: 9.9474e-04 - val_loss: 7.8715e-04
+Epoch 24/30
+ - 25s - loss: 9.5271e-04 - val_loss: 7.6790e-04
+Epoch 25/30
+ - 24s - loss: 9.1738e-04 - val_loss: 7.5766e-04
+Epoch 26/30
+ - 24s - loss: 8.9194e-04 - val_loss: 7.4611e-04
+Epoch 27/30
+ - 24s - loss: 8.7471e-04 - val_loss: 7.3772e-04
+Epoch 28/30
+ - 24s - loss: 8.5347e-04 - val_loss: 7.2236e-04
+Epoch 29/30
+ - 24s - loss: 8.2519e-04 - val_loss: 7.0904e-04
+Epoch 30/30
+ - 24s - loss: 8.1634e-04 - val_loss: 7.3747e-04
+trainPredict.shape (4785, 1)
+testPredict.shape (2355, 1)
+Train Score: 0.03 RMSE
+Test Score: 0.03 RMSE
