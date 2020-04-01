@@ -1,0 +1,3 @@
+*.pyc
+LSTM/logs
+LSTM/*/logs/
