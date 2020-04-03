@@ -53,5 +53,5 @@ Then run LSTM/predict.py
 ```bash
 python LSTM/predict.py
 ```
-# Citations: If you use this code in your work. Please cite the paper [here](https://www.researchgate.net/publication/335690482_Optimal_Reservoir_Operations_using_Long_Short-Term_Memory_Network)
+# Citations: If you use this code in your work. Please cite the paper [here](https://anurag14.github.io/images/LSTM_article.pdf)
 # Enjoy!
