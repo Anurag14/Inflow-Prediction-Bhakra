@@ -1,7 +1,7 @@
 # Inflow-Prediction-Bhakra
-This repository contains codes for:
-Optimal Reservior Operation using Long Short-Term Memory network
-Bi-directional Storage Capacity and Elevation Level Calculator for Reservoir Operation Management
+This repository contains codes and data for following publications:
+### Optimal Reservior Operation using Long Short-Term Memory network
+### Bi-directional Storage Capacity and Elevation Level Calculator for Reservoir Operation Management
 # System Requirements 
 ```bash
 python 3.6+
@@ -55,5 +55,5 @@ Then run LSTM/predict.py
 ```bash
 python LSTM/predict.py
 ```
-# Citations: If you use this code in your work. Please cite the paper [here](https://arxiv.org/abs/2109.04255)
+# Citations: If you use this code in your work. Please cite the papers [this](https://arxiv.org/abs/2109.04255) and [this](http://article.journalofwaterresources.com/pdf/ajwr-7-3-5.pdf)
 # Enjoy!
