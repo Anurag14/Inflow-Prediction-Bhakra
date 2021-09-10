@@ -1,5 +1,5 @@
 # Inflow-Prediction-Bhakra
-Inflow determination of Bhakra Reservoir using Long Short-Term Memory network
+Optimal Reservior Operation using Long Short-Term Memory network
 # System Requirements 
 ```bash
 python 3.6+
@@ -53,5 +53,5 @@ Then run LSTM/predict.py
 ```bash
 python LSTM/predict.py
 ```
-# Citations: If you use this code in your work. Please cite the paper [here](https://anurag14.github.io/images/LSTM_article.pdf)
+# Citations: If you use this code in your work. Please cite the paper [here](https://arxiv.org/abs/2109.04255)
 # Enjoy!
